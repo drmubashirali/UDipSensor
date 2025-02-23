@@ -1,0 +1,27 @@
+<view class="container" style="width: 750rpx; height: 675rpx; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+  <!-- Header -->
+  <view class="header">
+    <text class="header-text">Hybrid μDip Sensor</text>
+  </view>
+
+  <!-- Icons Section (moved a bit up by reducing margin-top) -->
+  <view class="icons-section" style="display: flex; justify-content: space-around; width: 100%; margin-top: 10rpx;">
+    <!-- Calibration Button with Image -->
+    <view class="icon-btn" bindtap="goToCalibration" style="text-align: center;">
+      <image src="../images/1.png" style="width: 180rpx; height: 180rpx;"></image>
+      <text style="display: block; margin-top: 2rpx; font-weight: bold; font-size: 26px;">Calibration</text>
+    </view>
+
+    <!-- Detection Button with Image -->
+    <view class="icon-btn" bindtap="goToDetection" style="text-align: center;">
+      <image src="../images/2.png" style="width: 180rpx; height: 180rpx;"></image>
+      <text style="display: block; margin-top: 2rpx; font-weight: bold; font-size: 26px;">Detection</text>
+    </view>
+
+    <!-- Records Button with Image -->
+    <view class="icon-btn" bindtap="onSavedData" style="text-align: center;">
+      <image src="../images/3.png" style="width: 180rpx; height: 180rpx;"></image>
+      <text style="display: block; margin-top: 2rpx; font-weight: bold; font-size: 26px;">Records</text>
+    </view>
+  </view>
+</view>

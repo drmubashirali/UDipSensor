@@ -1,0 +1,62 @@
+<view class="container">
+  <!-- Header -->
+  <view class="header">
+    <text class="header-text">Detection</text>
+  </view>
+
+  <!-- Blue Line Below Header -->
+  <view class="blue-line"></view>
+
+  <!-- Toggle Calibration Data -->
+  <button class="btn scan-btnn" bindtap="toggleCalibrationData" wx:if="{{!isDetectionComplete}}">
+    {{isCalibrationDataVisible ? "Hide" : "Show"}}
+  </button>
+
+  <!-- Display Calibration Data -->
+  <view wx:if="{{isCalibrationDataVisible && !isDetectionComplete}}" class="calibration-info">
+    <view class="info-text">{{linearEquation}}</view>
+    <view class="info-text">R²: {{rValue}}</view>
+  </view>
+
+  <!-- Display Scanned Images -->
+  <view class="image-row" wx:if="{{!isDetectionComplete}}">
+    <image wx:if="{{currentRefPic}}" src="{{currentRefPic}}" class="data-image" mode="aspectFit"></image>
+    <image wx:if="{{currentReacPic}}" src="{{currentReacPic}}" class="data-image" mode="aspectFit"></image>
+  </view>
+
+  <!-- Placeholder for Missing Images -->
+  <view wx:if="{{!currentRefPic && !isDetectionComplete}}" class="placeholder-text">
+    <text>No reference picture scanned yet.</text>
+  </view>
+  <view wx:if="{{!currentReacPic && !isDetectionComplete}}" class="placeholder-text">
+    <text>No reaction picture scanned yet.</text>
+  </view>
+
+  <!-- Display Detected BG Value -->
+  <view class="result-container" wx:if="{{isDetectionComplete}}">
+    <text class="result-text">Detected Glucose: {{detectionResult}} mmol/L</text>
+  </view>
+
+    <!-- Save Result and Abort Buttons -->
+  <view class="button-container" wx:if="{{isDetectionComplete}}">
+    <button class="btn abort-btn" bindtap="abortDetection">Abort</button>
+    <!-- Match Save button style with Detect button -->
+    <button class="btn detect-btn" bindtap="saveResult">Save</button>
+  </view>
+
+  <!-- Detect and Abort Buttons -->
+  <view class="button-container" wx:if="{{!isDetectionComplete}}">
+    <button class="btn abort-btn" bindtap="abortDetection">Abort</button>
+    <button class="btn detect-btn" bindtap="onDetect">Detect</button>
+  </view>
+
+  <!-- Scan Button (moved to the bottom) -->
+  <view class="scan-btn-container">
+    <button class="btn scan-btn" bindtap="handleScan" wx:if="{{!isDetectionComplete}}">
+      {{scanButtonLabel}}
+    </button>
+  </view>
+
+  <!-- Hidden Canvas for Analysis -->
+  <canvas id="analysisCanvas" type="2d" style="width: 300px; height: 300px; display: none;"></canvas>
+</view>

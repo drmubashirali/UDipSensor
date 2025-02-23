@@ -1,0 +1,40 @@
+<view class="container">
+  <!-- Header -->
+  <view class="header">
+    <text class="header-text">Calibration</text>
+  </view>
+
+  <!-- Blue Line Below Header -->
+  <view class="blue-line"></view>
+
+  <!-- Table Heading -->
+  <view class="table-heading">
+    <text class="table-cell heading">SN#</text>
+    <text class="table-cell heading">Ref.</text>
+    <text class="table-cell heading">Final</text>
+    <text class="table-cell heading">[mmol/L]</text>
+  </view>
+
+  <!-- Display Saved Data -->
+  <view wx:for="{{rowData}}" wx:key="index" class="table-row">
+    <text class="table-cell">{{index + 1}}</text>
+    <image src="{{item.refPic}}" class="data-image"></image>
+    <image src="{{item.reacPic}}" class="data-image"></image>
+    <text class="table-cell">{{item.value}}</text>
+  </view>
+
+  <canvas type="2d" id="analysisCanvas" style="width: 300px; height: 300px; display: none;"></canvas>
+
+  <!-- Analysis Button -->
+  <button wx:if="{{rowData.length >= 2}}" class="btn analysis-btn" bindtap="performAnalysis">
+    Calibrate
+  </button>
+
+  <!-- Abort Button -->
+  <button class="btn abort-btn" bindtap="abortCalibration">
+    Abort
+  </button>
+
+  <!-- Scan Button (moved to the bottom) -->
+  <button class="btn scan-btn" bindtap="handleScan">{{scanButtonLabel}}</button>
+</view>

@@ -1,0 +1,25 @@
+<view class="container">
+  <!-- Header -->
+  <view class="header">
+    <text class="header-text">Calibration</text>
+  </view>
+
+  <!-- Blue Line Below Header -->
+  <view class="blue-line"></view>
+
+  <view class="graph-container">
+    <canvas canvas-id="analysisGraph" style="width: 350px; height: 350px; "></canvas>
+  </view>
+
+  <!-- Linear Equation and R-value (each on separate lines) -->
+  <view class="equation-container">
+    <view class="equation">Equation: {{linearEquation}}</view>
+    <view class="r-value">R²: {{rValue}}</view> <!-- Square symbol for R -->
+  </view>
+
+  <!-- Buttons -->
+  <view class="button-container">
+    <button class="btn abort-btn" bindtap="abortAnalysis">Abort</button>
+    <button class="btn calibrate-btn" bindtap="calibrateFunction">Done</button>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<view class="container">
+  <!-- Header -->
+  <view class="header">
+    <text class="header-text">Saved Records</text>
+  </view>
+
+  <!-- Blue Line Below Header -->
+  <view class="blue-line"></view>
+
+  <!-- Table Header -->
+  <view class="table-heading">
+    <text class="table-cell heading">SN#</text>
+    <text class="table-cell heading">Glucose (mmol/L)</text>
+    <text class="table-cell heading">Time</text>
+    <text class="table-cell heading">Date</text>
+  </view>
+
+  <!-- Table Rows -->
+  <block wx:for="{{savedData}}" wx:key="index">
+    <view class="table-row">
+      <text class="table-cell">{{item.srNo}}</text>
+      <text class="table-cell">{{item.glucose}}</text>
+      <text class="table-cell">{{item.time}}</text>
+      <text class="table-cell">{{item.date}}</text>
+    </view>
+  </block>
+
+  <!-- Abort Button -->
+  <view class="button-container">
+    <button class="btn abort-btn" bindtap="abortToIndex">Abort</button>
+  </view>
+
+    <!-- Abort Button -->
+    <view class="button-container">
+    <button class="btn btndel" bindtap="delLast">Delete</button>
+  </view>
+</view>
+-

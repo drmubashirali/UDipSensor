@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%; /* Ensure container takes full height */
+}
+
+/* Header Styling */
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 30px;
+  color: black;
+  margin-top: 80rpx; /* Move header a little down */
+  font-weight: bold;
+}
+
+/* Blue line below the header */
+.blue-line {
+  width: 100%;
+  height: 6px;
+  background-color: #00AEEF;
+  margin-top: 1rpx; /* Margin below the header */
+  margin-bottom: 10rpx;
+}
+
+/* Buttons Styling */
+.btn {
+  width: 40%; /* Reduced width for two buttons to fit in one line */
+  height: 40px;
+  background-color: #007aff;
+  color: white;
+  text-align: center;
+  line-height: normal; /* Allow the text to be vertically centered */
+  border-radius: 5px;
+  font-size: 24px; /* Reduced font size */
+  display: flex; /* Flexbox for better vertical centering */
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+}
+
+.abort-btn {
+  font-size: 24px;
+  background-color: red;
+}
+
+.calibrate-btn {
+  font-size: 24px;
+  background-color: #4caf50;
+}
+
+.graph-container {
+  margin: 15px 0;
+}
+
+.equation-container {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.equation {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.r-value {
+  margin-top: 10rpx;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Button container to align buttons horizontally */
+.button-container {
+  display: flex;
+  justify-content: space-evenly; /* Space between the buttons */
+  width: 90%; /* Take up most of the width */
+  margin-top: 20rpx;
+  padding: 0 20rpx; /* Optional padding for spacing */
+}
